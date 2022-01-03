@@ -14,6 +14,23 @@ final class CalculatorManager {
     
     var errorHappened = false
     
+    func makeAction(_ value: String, tag: Int) {
+        switch tag {
+        case 11:
+            clearAll()
+        case 12:
+            clearLast()
+        case 15:
+            if isValidInput() {
+                calculate()
+            } else {
+                errorHappened = true
+            }
+        default:
+            addToWorking(value: value)
+        }
+    }
+    
     private func clearAll() {
         working = ""
         result = ""
@@ -35,8 +52,10 @@ final class CalculatorManager {
         let resultString = format(result: resultDouble)
         result = resultString
     }
-    
-    private func format(result: Double) -> String {
+}
+
+private extension CalculatorManager {
+    func format(result: Double) -> String {
         if result.truncatingRemainder(dividingBy: 1) == 0 {
             return String(format: "%.0f", result)
         } else {
@@ -44,7 +63,7 @@ final class CalculatorManager {
         }
     }
     
-    private func isValidInput() -> Bool {
+    func isValidInput() -> Bool {
         var count = 0
         var charIndexes = [Int]()
         
@@ -73,27 +92,10 @@ final class CalculatorManager {
         return true
     }
     
-    private func isOperand(_ char: Character) -> Bool {
+    func isOperand(_ char: Character) -> Bool {
         if char == "*" || char == "/" || char == "+" || char == "-" {
             return true
         }
         return false
-    }
-    
-    func makeAction(_ value: String, tag: Int) {
-        switch tag {
-        case 11:
-            clearAll()
-        case 12:
-            clearLast()
-        case 15:
-            if isValidInput() {
-                calculate()
-            } else {
-                errorHappened = true
-            }
-        default:
-            addToWorking(value: value)
-        }
     }
 }
