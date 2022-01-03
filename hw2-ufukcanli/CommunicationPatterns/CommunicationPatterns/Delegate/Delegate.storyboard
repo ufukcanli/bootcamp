@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="DelegateViewController" customModule="CommunicationPatterns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="sSz-f3-ha1">
+                                <rect key="frame" x="95" y="373" width="224" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-fA-IWp">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="83"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, stranger!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shU-QJ-fTe">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please tap the button below  to introduce yourself." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlY-pN-wIV">
+                                                <rect key="frame" x="0.0" y="47" width="224" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls9-IN-Osr">
+                                        <rect key="frame" x="0.0" y="108" width="224" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Edit Name"/>
+                                        <connections>
+                                            <segue destination="VCY-H9-ScU" kind="presentation" identifier="editNameSegueDP" id="cWH-MG-B7j"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sSz-f3-ha1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="J4S-4P-Njx"/>
+                            <constraint firstItem="sSz-f3-ha1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lH1-HZ-FIb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="greetingMessageLabel" destination="shU-QJ-fTe" id="0Ck-k5-VgS"/>
+                        <outlet property="warningMessageLabel" destination="zlY-pN-wIV" id="fUl-6k-TBs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="82"/>
+        </scene>
+        <!--Edit NameDP View Controller-->
+        <scene sceneID="Ab5-AE-Qh0">
+            <objects>
+                <viewController id="VCY-H9-ScU" customClass="EditNameDPViewController" customModule="CommunicationPatterns" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcK-kG-pg4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please type your name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQI-0m-o08">
+                                <rect key="frame" x="40" y="200" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Y0d-tI-u1e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-Q0-J9F">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Edit Name" id="Qd9-Ll-9sM">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="MXu-Md-Q2B">
+                                            <connections>
+                                                <action selector="didTapCancelButton:" destination="VCY-H9-ScU" id="Hot-8l-5Fz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="GKq-7i-Hw2">
+                                            <connections>
+                                                <action selector="didTapDoneButton:" destination="VCY-H9-ScU" id="e0u-kg-6SD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gJq-cj-VV0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YQI-0m-o08" firstAttribute="leading" secondItem="gJq-cj-VV0" secondAttribute="leading" constant="40" id="FiT-sw-p9l"/>
+                            <constraint firstItem="YQI-0m-o08" firstAttribute="top" secondItem="gJq-cj-VV0" secondAttribute="top" constant="200" id="WGc-5m-DF8"/>
+                            <constraint firstItem="gJq-cj-VV0" firstAttribute="trailing" secondItem="YQI-0m-o08" secondAttribute="trailing" constant="40" id="j5D-xI-LEv"/>
+                            <constraint firstItem="YQI-0m-o08" firstAttribute="centerX" secondItem="bcK-kG-pg4" secondAttribute="centerX" id="tga-gB-WDp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="editNameTextField" destination="YQI-0m-o08" id="emp-mo-3FN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cG0-Zz-Lny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
