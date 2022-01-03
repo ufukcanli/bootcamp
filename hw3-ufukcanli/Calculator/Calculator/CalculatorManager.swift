@@ -44,7 +44,7 @@ final class CalculatorManager {
         }
     }
     
-    func isValidInput() -> Bool {
+    private func isValidInput() -> Bool {
         var count = 0
         var charIndexes = [Int]()
         
