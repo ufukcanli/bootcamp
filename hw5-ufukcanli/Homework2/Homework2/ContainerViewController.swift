@@ -10,6 +10,7 @@ import UIKit
 final class ContainerViewController: UIViewController {
     
     private let pageViewController: UIPageViewController
+    
     private var pages = [UIViewController]()
     private var currentVC: UIViewController
     private var currentVCIndex = 0
@@ -86,7 +87,7 @@ private extension ContainerViewController {
     func startTimer() {
         isTimerStarted = true
         let timer = Timer.scheduledTimer(
-            withTimeInterval: 5.0,
+            withTimeInterval: 10.0,
             repeats: true
         ) { [self] timer in
             if currentVCIndex == pages.count - 1 {
